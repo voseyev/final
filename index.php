@@ -18,4 +18,9 @@ $f3->route('GET /', function() {
 }
 );
 
+$f3->route('GET|POST /information', function(){
+    $template = new Template();
+    echo $template->render('pages/information.html');
+});
+
 $f3->run();
