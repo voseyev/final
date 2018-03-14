@@ -1,5 +1,8 @@
 .background {
-    background-image: url("../images/woodimage.jpg");
+    background-image: url("../images/tile.jpg");
     background-color: #cccccc;
     background-size: 100%;
+}
+h1 {
+    text-align: center;
 }

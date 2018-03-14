@@ -1,0 +1,13 @@
+
+{
+  "name":"zkunitsa/328/final",
+  "authors":[
+    {
+      "name":"Zach Kunitsa",
+      "email":"zkunitsa@mail.greenriver.edu"
+    }
+  ],
+  "require":{
+    "bcosca/fatfree-core":"dev-master"
+  }
+}
