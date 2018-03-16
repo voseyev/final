@@ -22,39 +22,37 @@ $f3 -> route('GET /', function() {
 );
 
 //estimate page
-$f3 -> route('GET|POST /estimate', function($f3) {
+$f3 -> route('GET|POST /estimate', function() {
     $template = new Template();
-    if(isset($_POST['submit']))
-    {
-        $location = $_POST['location'];
-        $sqrFt = $_POST['sqrFt'];
-        $errors = $_POST['errors'];
-
-        include('model/validate.php');
-
-        if(!isset($errors['sqrFt']) && !isset($errors['location']))
-        {
-            $_SESSION['location']=$location;
-            $_SESSION['sqrFt']=$sqrFt;
-            $member = $_SESSION['member'];
-            $member->setLocation($location);
-            $member->setSqrFt($sqrFt);
-            $_SESSION['member'] = $member;
-            header("Location:style");
-        }
-    }
-    $f3->set('location',$location);
-    $f3->set('sqrFt',$sqrFt);
-    $f3->set('errors',$errors);
-
     echo $template->render('pages/estimate.html');
 });
 
 
 //style page
 $f3 -> route('GET|POST /style', function($f3) {
+    $template = new Template();
     if(isset($_POST['submit']))
     {
+        echo "Post array <pre>";
+        var_dump($_POST);
+        echo "</pre>";
+        $location = $_POST['location'];
+        $sqrFt = $_POST['sqrFt'];
+        //$errors = $_POST['errors'];
+
+        include('model/validate.php');
+
+    }
+    $f3->set('location',$location);
+    $f3->set('sqrFt',$sqrFt);
+    //$f3->set('errors',$errors);
+    echo $template->render('pages/style.html');
+
+
+});
+
+$f3 -> route('GET|POST /summary', function($f3) {
+    if (isset($_POST['submit'])) {
         echo "Post array <pre>";
         var_dump($_POST);
         echo "</pre>";
@@ -63,8 +61,8 @@ $f3 -> route('GET|POST /style', function($f3) {
         $material = $_POST['material'];
 
 
-        $f3->set('size',$size);
-        $f3->set('material',$material);
+        $f3->set('size', $size);
+        $f3->set('material', $material);
 
 
         $_SESSION['size'] = $_POST['size'];

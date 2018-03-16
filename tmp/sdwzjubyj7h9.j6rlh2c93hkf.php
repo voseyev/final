@@ -27,10 +27,11 @@
 <div class="container">
 
     <!-- Page Heading/Breadcrumbs -->
+    <form method="post" action="style">
     <div class="mt-4 mb-3">
-        <p><?= ($errors['sqrRt']) ?></p>
+        <p><?= ($errors['sqrFt']) ?></p>
         <label for="sqrFt">How many square feet of tile do you want?</label>
-        <input type = "text" name = "sqrFt" id="sqrFt" value="<?= ($fname) ?>">
+        <input type = "text" name = "sqrFt" id="sqrFt" value="">
     </div>
 
     <p class="breadcrumb" >Where would you like to lay the Tile?</p>
@@ -38,7 +39,6 @@
     <div class = "row">
         <div class="col-sm-12">
             <div class="container" id="maindiv2">
-                <form method="post" action="#">
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-3">
@@ -78,14 +78,14 @@
                         </div>
                         <p><?= ($errors['location']) ?></p>
                     </div>
-
-                </form>
-        <form>
-            </div><br>
-            <input class="btn btn-primary" type = "submit" name = "submit" id="submit" value="Next>">
+            <div><br>
+            <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Next>">
         </div>
-        </form>
+            </div>
     </div>
+    </div>
+</form>
+</div>
 
 
 
