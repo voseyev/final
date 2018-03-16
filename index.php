@@ -6,8 +6,6 @@ require_once('vendor/autoload.php');
 ini_set("display_errors", 3);
 error_reporting(E_ALL);
 
-
-
 session_start();
 
 //create an instance of the base class

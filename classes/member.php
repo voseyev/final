@@ -17,17 +17,17 @@ class Member
      */
     public function __construct($sqrFt, $location, $size, $material)
     {
-        $this->fname = $sqrFt;
-        $this->lname = $location;
-        $this->age = $size;
-        $this->gender = $material;
+        $this->sqrFt = $sqrFt;
+        $this->location = $location;
+        $this->size = $size;
+        $this->material = $material;
     }
 
     //FNAME
 
     /**
      * Sets the square feet of the tile
-     * @param $fname first name
+     * @param $sqrFt square feet
      */
     function setSqrFt($sqrFt)
     {
@@ -35,7 +35,7 @@ class Member
     }
 
     /**
-     * @return first name of user
+     * @return square feet of tile
      */
     function getSqrFt()
     {
@@ -45,8 +45,8 @@ class Member
     //LNAME
 
     /**
-     * Sets the last name of the user
-     * @param $lname last name
+     * set location of tile
+     * @param $location location of tile
      */
     function setLocation($location)
     {
@@ -54,7 +54,7 @@ class Member
     }
 
     /**
-     * @return last name of user
+     * @return location of tile
      */
     function getLocation()
     {
@@ -64,8 +64,8 @@ class Member
     //AGE
 
     /**
-     * Sets the age of the user
-     * @param $age age of user
+     * sets the size of tile
+     * @param $size size of tile
      */
     function setSize($size)
     {
@@ -73,7 +73,7 @@ class Member
     }
 
     /**
-     * @return age of user
+     * @return size of tile
      */
     function getSize()
     {
@@ -83,8 +83,8 @@ class Member
     //GENDER
 
     /**
-     * Sets the gender of the user
-     * @param $gender gender of user
+     * sets material of tile
+     * @param $material material of tile
      */
     function setMaterial($material)
     {
@@ -92,7 +92,7 @@ class Member
     }
 
     /**
-     * @return gender of user
+     * @return material of tile
      */
     function getMaterial()
     {

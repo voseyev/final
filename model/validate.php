@@ -39,9 +39,9 @@ function validLocation($location)
 
 $errors = array();
 
-if(!validsqrFt($sqrFt))
+if(!validSqrFt($sqrFt))
 {
-    $errors['sqrFt']="Please enter a valid measurment.";
+    $errors['sqrFt']="Please enter a valid measurement.";
     echo "ERROR";
 }
 
