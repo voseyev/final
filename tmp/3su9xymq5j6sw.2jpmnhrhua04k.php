@@ -20,7 +20,7 @@
 
 <body>
 <!-- Navigation -->
-<include href="pages/navbar.html"/>
+<?php echo $this->render('pages/navbar.html',NULL,get_defined_vars(),0); ?>
 
 <!-- Page Content -->
 <div class="container">

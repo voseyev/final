@@ -20,7 +20,7 @@
 
 <body>
 <!-- Navigation -->
-<include href="pages/navbar.html"/>
+<?php echo $this->render('pages/navbar.html',NULL,get_defined_vars(),0); ?>
 
 
 <!-- Page Content -->
@@ -28,9 +28,9 @@
 
     <!-- Page Heading/Breadcrumbs -->
     <div class="mt-4 mb-3">
-        <p>{{@errors['sqrRt']}}</p>
+        <p><?= ($errors['sqrRt']) ?></p>
         <label for="sqrFt">How many square feet of tile do you want?</label>
-        <input type = "text" name = "sqrFt" id="sqrFt" value="{{@fname}}">
+        <input type = "text" name = "sqrFt" id="sqrFt" value="<?= ($fname) ?>">
     </div>
 
     <p class="breadcrumb" >Where would you like to lay the Tile?</p>
@@ -76,7 +76,7 @@
                                 <img  src="./images/shower.jpg" class = "location" alt = "shower">
                             </div>
                         </div>
-                        <p>{{@errors['location']}}</p>
+                        <p><?= ($errors['location']) ?></p>
                     </div>
 
                 </form>
