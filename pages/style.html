@@ -28,7 +28,7 @@
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3">Style</h1>
 
-
+<form method="post" action="summary">
     <div class="breadcrumb">
         <label for="size">Size:</label><br>
         <select name = "size" id="size" >
@@ -109,7 +109,8 @@
     </div>
 
     <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Next>">
-
+</form>
+</div>
 
 
 
