@@ -30,8 +30,8 @@
     <form method="post" action="style">
     <div class="mt-4 mb-3">
         <p><?= ($errors['sqrFt']) ?></p>
-        <label for="sqrFt">How many square feet of tile do you want?</label>
-        <input type = "text" name = "sqrFt" id="sqrFt" value="">
+        <label>How many square feet of tile do you want?</label>
+        <input type="text" name="sqrFt" id="sqrFt" value="">
     </div>
 
     <p class="breadcrumb" >Where would you like to lay the Tile?</p>

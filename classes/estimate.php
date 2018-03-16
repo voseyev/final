@@ -15,15 +15,14 @@ class estimate
      * @param $gender gender of user
      * @param $phone phone number of user
      */
-    public function __construct($sqrFt, $location, $size, $material)
+    public function __construct($location, $sqrFt)
     {
         $this->sqrFt = $sqrFt;
         $this->location = $location;
-        $this->size = $size;
-        $this->material = $material;
+        //$this->size = $size;
+        //$this->material = $material;
     }
 
-    //FNAME
 
     /**
      * Sets the square feet of the tile

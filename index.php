@@ -30,6 +30,7 @@ $f3 -> route('GET|POST /estimate', function() {
 
 //style page
 $f3 -> route('GET|POST /style', function($f3) {
+    include('classes/estimate.php');
     $template = new Template();
     if(isset($_POST['submit']))
     {
@@ -38,13 +39,25 @@ $f3 -> route('GET|POST /style', function($f3) {
         echo "</pre>";
         $location = $_POST['location'];
         $sqrFt = $_POST['sqrFt'];
-        //$errors = $_POST['errors'];
+
+        $f3->set('location', $location);
+        $f3->set('sqrFt', $sqrFt);
 
         include('model/validate.php');
 
+        $estimate = new estimate($location, $sqrFt);
+
+        $estimate->setSqrFt($sqrFt);
+        $estimate->setLocation($location);
+        //$errors = $_POST['errors'];
+
+        echo print_r($estimate->getLocation());
+        echo $estimate->getSqrFt();
+
     }
-    $f3->set('location',$location);
-    $f3->set('sqrFt',$sqrFt);
+
+
+
     //$f3->set('errors',$errors);
     echo $template->render('pages/style.html');
 

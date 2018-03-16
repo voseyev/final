@@ -29,6 +29,7 @@ function validLocation($location)
             }
         }
     }else{
+
         return false;
     }
     return true;

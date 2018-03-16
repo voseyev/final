@@ -31,7 +31,6 @@ return array(
     'Magic' => $vendorDir . '/bcosca/fatfree-core/magic.php',
     'Markdown' => $vendorDir . '/bcosca/fatfree-core/markdown.php',
     'Matrix' => $vendorDir . '/bcosca/fatfree-core/matrix.php',
-    'Member' => $baseDir . '/classes/member.php',
     'Prefab' => $vendorDir . '/bcosca/fatfree-core/base.php',
     'Preview' => $vendorDir . '/bcosca/fatfree-core/base.php',
     'Registry' => $vendorDir . '/bcosca/fatfree-core/base.php',
@@ -49,4 +48,5 @@ return array(
     'Web\\OpenID' => $vendorDir . '/bcosca/fatfree-core/web/openid.php',
     'Web\\Pingback' => $vendorDir . '/bcosca/fatfree-core/web/pingback.php',
     'database' => $baseDir . '/model/database.php',
+    'estimate' => $baseDir . '/classes/estimate.php',
 );

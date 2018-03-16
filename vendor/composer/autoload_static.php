@@ -32,7 +32,6 @@ class ComposerStaticInitf1d1507496e4f332494b57fa6709c2c9
         'Magic' => __DIR__ . '/..' . '/bcosca/fatfree-core/magic.php',
         'Markdown' => __DIR__ . '/..' . '/bcosca/fatfree-core/markdown.php',
         'Matrix' => __DIR__ . '/..' . '/bcosca/fatfree-core/matrix.php',
-        'Member' => __DIR__ . '/../..' . '/classes/member.php',
         'Prefab' => __DIR__ . '/..' . '/bcosca/fatfree-core/base.php',
         'Preview' => __DIR__ . '/..' . '/bcosca/fatfree-core/base.php',
         'Registry' => __DIR__ . '/..' . '/bcosca/fatfree-core/base.php',
@@ -50,6 +49,7 @@ class ComposerStaticInitf1d1507496e4f332494b57fa6709c2c9
         'Web\\OpenID' => __DIR__ . '/..' . '/bcosca/fatfree-core/web/openid.php',
         'Web\\Pingback' => __DIR__ . '/..' . '/bcosca/fatfree-core/web/pingback.php',
         'database' => __DIR__ . '/../..' . '/model/database.php',
+        'estimate' => __DIR__ . '/../..' . '/classes/estimate.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
