@@ -23,13 +23,15 @@ $f3 -> route('GET /', function() {
 }
 );
 
-
+//estimate page
 $f3 -> route('GET|POST /estimate', function($f3) {
     if(isset($_POST['submit']))
     {
         $location = $_POST['location'];
         $sqrFt = $_POST['sqrFt'];
         $errors = $_POST['errors'];
+
+        include('model/validate.php');
 
         if(!isset($errors['sqrFt']) && !isset($errors['location']))
         {
@@ -51,7 +53,31 @@ $f3 -> route('GET|POST /estimate', function($f3) {
     echo $template->render('pages/estimate.html');
 });
 
-$f3 -> route('GET|POST /style', function() {
+
+//style page
+$f3 -> route('GET|POST /style', function($f3) {
+    if(isset($_POST['submit']))
+    {
+        $size = $_POST['size'];
+        $material = $_POST['material'];
+
+
+        $f3->set('size',$size);
+        $f3->set('material',$material);
+
+
+        $_SESSION['size'] = $_POST['size'];
+        $_SESSION['material'] = $_POST['material'];
+
+
+        $member = $_SESSION['member'];
+        $member->setSize($_SESSION['size']);
+        $member->setState($_SESSION['material']);
+
+        $_SESSION['member'] = $member;
+        header("Location:summary");
+    }
+
     $template = new Template();
     echo $template->render('pages/style.html');
 });
