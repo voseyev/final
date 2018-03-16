@@ -23,6 +23,7 @@ $f3 -> route('GET /', function() {
 
 //estimate page
 $f3 -> route('GET|POST /estimate', function($f3) {
+    $template = new Template();
     if(isset($_POST['submit']))
     {
         $location = $_POST['location'];
@@ -46,8 +47,6 @@ $f3 -> route('GET|POST /estimate', function($f3) {
     $f3->set('sqrFt',$sqrFt);
     $f3->set('errors',$errors);
 
-
-    $template = new Template();
     echo $template->render('pages/estimate.html');
 });
 
@@ -56,6 +55,10 @@ $f3 -> route('GET|POST /estimate', function($f3) {
 $f3 -> route('GET|POST /style', function($f3) {
     if(isset($_POST['submit']))
     {
+        echo "Post array <pre>";
+        var_dump($_POST);
+        echo "</pre>";
+
         $size = $_POST['size'];
         $material = $_POST['material'];
 
@@ -68,21 +71,16 @@ $f3 -> route('GET|POST /style', function($f3) {
         $_SESSION['material'] = $_POST['material'];
 
 
-        $member = $_SESSION['member'];
-        $member->setSize($_SESSION['size']);
-        $member->setState($_SESSION['material']);
+        $estimate = $_SESSION['estimate'];
+        $estimate->setSize($_SESSION['size']);
+        $estimate->setMaterial($_SESSION['material']);
 
-        $_SESSION['member'] = $member;
+        $_SESSION['estimate'] = $estimate;
         header("Location:summary");
     }
 
     $template = new Template();
     echo $template->render('pages/style.html');
 });
-
-
-
-
-
 
 $f3->run();
