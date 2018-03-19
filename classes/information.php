@@ -8,6 +8,10 @@
 
 class information
 {
+
+    protected $firstName;
+    protected $lastName;
+    protected $email;
     /**
      * information constructor.
      * @param $fname first name of user
@@ -16,7 +20,7 @@ class information
      */
     public function __construct($firstName, $lastName, $email)
     {
-        $this->firstname = $firstName;
+        $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
     }
@@ -25,7 +29,7 @@ class information
      * Sets the first name of user
      * @param $firstName first name
      */
-    function setSqrFt($firstName)
+    function setFirst($firstName)
     {
         $this->first = $firstName;
     }
@@ -33,7 +37,7 @@ class information
     /**
      * @return first name of user
      */
-    function getSqrFt()
+    function getFirst()
     {
         return $this->firstName;
     }
@@ -42,7 +46,7 @@ class information
      * Sets the last name of user
      * @param $lastName last name
      */
-    function setLocation($lastName)
+    function setLast($lastName)
     {
         $this->lastName = $lastName;
     }
@@ -50,7 +54,7 @@ class information
     /**
      * @return last name of user
      */
-    function getLocation()
+    function getLast()
     {
         return $this->lastName;
     }
@@ -59,7 +63,7 @@ class information
      * Sets the email of user
      * @param $email email
      */
-    function setSize($email)
+    function setEmail($email)
     {
         $this->email = $email;
     }
@@ -67,7 +71,7 @@ class information
     /**
      * @return email of user
      */
-    function getSize()
+    function getEmail()
     {
         return $this->email;
     }
