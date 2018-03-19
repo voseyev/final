@@ -8,19 +8,18 @@ class estimate
 
 
     /**
-     * Member constructor.
-     * @param $fname first name of user
-     * @param $lname last name of user
-     * @param $age age of user
-     * @param $gender gender of user
-     * @param $phone phone number of user
+     * estimate constructor
+     * @param $location the place(s) the user chooses for tile installation
+     * @param $sqrFt Square feet user chooses
+     * @param $size size the tile user chooses
+     * @param $material the type of tile user chooses
      */
-    public function __construct($location, $sqrFt)
+    public function __construct($location, $sqrFt, $size, $material)
     {
         $this->sqrFt = $sqrFt;
         $this->location = $location;
-        //$this->size = $size;
-        //$this->material = $material;
+        $this->size = $size;
+        $this->material = $material;
     }
 
 
@@ -41,7 +40,6 @@ class estimate
         return $this->sqrFt;
     }
 
-    //LNAME
 
     /**
      * set location of tile
@@ -60,7 +58,6 @@ class estimate
         return $this->location;
     }
 
-    //AGE
 
     /**
      * sets the size of tile
@@ -78,8 +75,6 @@ class estimate
     {
         return $this->size;
     }
-
-    //GENDER
 
     /**
      * sets material of tile
