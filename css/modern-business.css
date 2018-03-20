@@ -36,3 +36,17 @@ img.location {
 input#submit {
   align: right;
 }
+
+p.breadcrumb, label {
+  font-weight: bold;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+h4 {
+  text-align: center;
+}
