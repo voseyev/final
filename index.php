@@ -34,9 +34,7 @@ $f3 -> route('GET|POST /style', function($f3) {
     $template = new Template();
     if(isset($_POST['submit']))
     {
-        echo "Post array <pre>";
-        var_dump($_POST);
-        echo "</pre>";
+
         $location = $_POST['location'];
         $sqrFt = $_POST['sqrFt'];
 
@@ -49,10 +47,6 @@ $f3 -> route('GET|POST /style', function($f3) {
 
         $estimate->setSqrFt($sqrFt);
         $estimate->setLocation($location);
-        //$errors = $_POST['errors'];
-
-        echo print_r($estimate->getLocation());
-        echo $estimate->getSqrFt();
 
     }
 
@@ -68,27 +62,81 @@ $f3 -> route('GET|POST /summary', function($f3) {
         $size = $_POST['size'];
         $material = $_POST['material'];
 
+        $_SESSION['size'] = $size;
+        $_SESSION['material'] = $material;
+
         $sqrFt = $_SESSION['sqrFt'];
         $location = $_SESSION['location'];
-
-        $f3->set('location', $location);
-        $f3->set('sqrFt', $sqrFt);
-        $f3->set('size', $size);
-        $f3->set('material', $material);
-
 
         $estimate = new estimate($location, $sqrFt, $size, $material);
 
 
-        $estimate->setSize($_SESSION['size']);
-        $estimate->setMaterial($_SESSION['material']);
+        $estimate->setSize($size);
+        $estimate->setMaterial($material);
 
+        $arraySize = sizeof($location);
 
+        $_SESSION['arraySize'] = $arraySize;
+
+            $f3->set('location', $location);
+            $f3->set('sqrFt', $sqrFt);
+            $f3->set('size', $size);
+            $f3->set('material', $material);
+            $f3->set('arraySize', $arraySize);
 
     }
 
     $template = new Template();
     echo $template->render('pages/summary.html');
+});
+
+$f3 -> route('GET|POST /contact', function() {
+    $template = new Template();
+    if(isset($_POST['Revise'])) {
+        echo $template->render('pages/estimate.html');
+    }
+    else {
+    echo $template->render('pages/contact.html');
+    }
+});
+
+$f3 -> route('GET|POST /finalSummary', function($f3) {
+    include('classes/information.php');
+    $template = new Template();
+    if (isset($_POST['confirm'])) {
+
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $email = $_POST['email'];
+
+        $information = new information($firstName, $lastName, $email);
+
+
+        $information->setFirst($firstName);
+        $information->setLast($lastName);
+        $information->setEmail($email);
+
+        $f3->set('location', $_SESSION['location']);
+        $f3->set('sqrFt', $_SESSION['sqrFt']);
+        $f3->set('size', $_SESSION['size']);
+        $f3->set('material', $_SESSION['material']);
+        $f3->set('arraySize', $_SESSION['arraySize']);
+
+        $f3->set('firstName', $firstName);
+        $f3->set('lastName', $lastName);
+        $f3->set('email', $email);
+    }
+        echo $template->render('pages/finalSummary.html');
+});
+
+$f3 -> route('GET|POST /end', function() {
+    $template = new Template();
+    if(isset($_POST['Revise'])) {
+        echo $template->render('pages/contact.html');
+    }
+    else {
+        echo $template->render('pages/end.html');
+    }
 });
 
 $f3->run();
