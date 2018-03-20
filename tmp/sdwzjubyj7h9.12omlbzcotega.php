@@ -11,7 +11,7 @@
 </head>
 <body>
 <!-- Navigation -->
-<include href="pages/navbar.html"/>
+<?php echo $this->render('pages/navbar.html',NULL,get_defined_vars(),0); ?>
 <form method="post" action="contact">
 <div class="container-fluid" style="padding-left: 35px">
 
@@ -23,24 +23,24 @@
             <br>
             <table class="table table-bordered">
                 <tr>
-                    <td>Size: {{@size}}</td>
+                    <td>Size: <?= ($size) ?></td>
                 </tr>
                 <tr>
-                    <td>Material: {{@material}}</td>
+                    <td>Material: <?= ($material) ?></td>
                 </tr>
                 <tr>
-                    <td>Square Feet: {{@sqrFt}}</td>
+                    <td>Square Feet: <?= ($sqrFt) ?></td>
                 </tr>
                     <tr>
                         <td>Location:
-                            <repeat group="{{ @location }}" value="{{@locations}}">
-                                {{@locations}},
-                            </repeat>
+                            <?php foreach (($location?:[]) as $locations): ?>
+                                <?= ($locations) ?>,
+                            <?php endforeach; ?>
                         </td>
                     </tr>
 
                 <tr>
-                    <td>Total Estimate Price: ${{(@sqrFt * 5) * @arraySize}}.00</td>
+                    <td>Total Estimate Price: $<?= (($sqrFt * 5) * $arraySize) ?>.00</td>
                 </tr>
             </table>
         </div>
