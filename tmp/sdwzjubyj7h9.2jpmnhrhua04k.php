@@ -46,6 +46,84 @@
     </div>
 
     <div class="row">
+               <div class="col">
+                    <div class="card h-500">
+                        <a href="#"><img class="card-img-top" src="./images/1x1.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">1x1</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-500">
+                        <a href="#"><img class="card-img-top" src="./images/1x2.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">1x2</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-500">
+                        <a href="#"><img class="card-img-top" src="./images/2x2.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">2x2</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-500">
+                        <a href="#"><img class="card-img-top" src="./images/4x4.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">4x4</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-500">
+                        <a href="#"><img class="card-img-top" src="./images/3x6.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">3x6</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-100"></div>
+                <div class="col">
+                    <div class="card h-500">
+                        <a href="#"><img class="card-img-top" src="./images/12x12.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">12x12</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-500">
+                        <a href="#"><img class="card-img-top" src="./images/4x24.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">4x24</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-500">
+                        <a href="#"><img class="card-img-top" src="./images/12x24.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">12x24</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-500">
+                        <a href="#"><img class="card-img-top" src="./images/24x24.jpg" alt=""></a>
+                        <div class="card-body">
+                            <h4 class="card-title">24x24</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div><br><br>
+
+    <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
             <div class="card h-100">
                 <a href="#"><img class="card-img-top" src="./images/marble.jpg" alt=""></a>

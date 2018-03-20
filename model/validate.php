@@ -25,6 +25,7 @@ function validLocation($arraySize)
         return false;
     }
     else return true;
+    $arraySize = 0;
 }
 
 

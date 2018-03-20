@@ -154,7 +154,6 @@ $f3 -> route('GET|POST /finalSummary', function($f3) {
             $f3->set('invalidLastName', "invalid");
             $isValid = false;
         }
-
         if (!validEmail($email)) {
             $f3->set('invalidEmail', "invalid");
             $isValid = false;
