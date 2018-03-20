@@ -14,9 +14,9 @@ class information
     protected $email;
     /**
      * information constructor.
-     * @param $fname first name of user
-     * @param $lname last name of user
-     * @param $gender gender of user
+     * @param $firstName first name of user
+     * @param $lastName last name of user
+     * @param $email gender of user
      */
     public function __construct($firstName, $lastName, $email)
     {
@@ -31,7 +31,7 @@ class information
      */
     function setFirst($firstName)
     {
-        $this->first = $firstName;
+        $this->firstName = $firstName;
     }
 
     /**
