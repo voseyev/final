@@ -71,6 +71,7 @@ $f3 -> route('GET|POST /style', function($f3) {
 
 });
 
+//summary page
 $f3 -> route('GET|POST /summary', function($f3) {
     if (isset($_POST['submit'])) {
 
@@ -105,6 +106,7 @@ $f3 -> route('GET|POST /summary', function($f3) {
     echo $template->render('pages/summary.html');
 });
 
+//contact page
 $f3 -> route('GET|POST /contact', function() {
     $template = new Template();
     if(isset($_POST['Revise'])) {
@@ -115,6 +117,7 @@ $f3 -> route('GET|POST /contact', function() {
     }
 });
 
+//final summary page
 $f3 -> route('GET|POST /finalSummary', function($f3) {
     include('classes/information.php');
     $template = new Template();
@@ -168,6 +171,7 @@ $f3 -> route('GET|POST /finalSummary', function($f3) {
     }
 });
 
+//last page
 $f3 -> route('GET|POST /end', function() {
     $template = new Template();
     if(isset($_POST['Revise'])) {
@@ -178,6 +182,7 @@ $f3 -> route('GET|POST /end', function() {
     }
 });
 
+//admin page
 $f3 -> route('GET|POST /admin', function($f3) {
     $template = new Template();
     if (isset($_POST['admin'])) {
