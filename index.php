@@ -147,13 +147,12 @@ $f3 -> route('GET|POST /end', function() {
 
 $f3 -> route('GET|POST /admin', function($f3) {
     $template = new Template();
-
     if (isset($_POST['admin'])) {
         $dbh = $_SESSION['dbh'];
         $clients = $dbh->getClients();
         $f3->set('clients', $clients);
-    echo $template->render('pages/admin.html');
     }
+    echo $template->render('pages/admin.html');
 });
 
 $f3->run();
