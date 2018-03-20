@@ -27,7 +27,7 @@
                 </thead>
                 <tbody>
                 <repeat group="{{@clients}}" value="{{@client}}">
-                    <tr onclick="routeTo({{ @client['cusomer_id'] }})">
+                    <tr>
                         <td>{{@client['customer_id']}}</td>
                         <td>{{@client['firstname']}} {{@client['lastname']}}</td>
                         <td>{{@client['email']}}</td>
