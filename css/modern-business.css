@@ -36,3 +36,7 @@ img.location {
 input#submit {
   align: right;
 }
+
+p.breadcrumb {
+  font-weight: bold;
+}
