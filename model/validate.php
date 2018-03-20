@@ -19,22 +19,12 @@ function validEmail($email)
     else return true;
 }
 
-function validLocation($location)
+function validLocation($arraySize)
 {
-    if(!empty($location)) {
-        foreach ($location as $activity) {
-            if ($activity != "kitchen" && $activity != "bathroom" &&
-                $activity != "familyRoom" && $activity != "patio" &&
-                $activity != "backsplash" && $activity != "floor"
-                && $activity != "shower") {
-                return false;
-            }
-        }
-    }else{
-
+    if($arraySize == 0) {
         return false;
     }
-    return true;
+    else return true;
 }
 
 

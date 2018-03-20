@@ -55,6 +55,11 @@ $f3 -> route('GET|POST /style', function($f3) {
             $f3->set('invalidSqrFt', "invalid");
             $isValid  = false;
         }
+        $arraySize = sizeof($location);
+        if(!validLocation($arraySize)) {
+            $f3->set('invalidLocation', "invalid");
+            $isValid = false;
+        }
     }
 
     if($isValid) {

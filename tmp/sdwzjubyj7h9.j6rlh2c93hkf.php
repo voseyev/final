@@ -40,7 +40,11 @@
         <?php endif; ?>>
     </div>
 
-    <p class="breadcrumb" >Where would you like to lay the Tile?</p>
+    <label class="breadcrumb" >Where would you like to lay the Tile?
+        <?php if (isset($invalidLocation)): ?>
+            <br>
+            <span class="error">Please select at least one location</span>
+        <?php endif; ?>
 
     <div class = "row">
         <div class="col-sm-12">
@@ -89,6 +93,7 @@
             </div>
     </div>
     </div>
+    </label>
 </form>
 </div>
 
