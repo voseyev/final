@@ -5,6 +5,7 @@
  * Date: 2/26/2018
  */
 
+
 function validName($name) {
     return ctype_alpha($name);
 }
