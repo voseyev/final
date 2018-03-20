@@ -1,4 +1,12 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Zach, Vlad
+ * Date: 3/15/18
+ * Time: 7:55 PM
+ *
+ * estimate class
+ */
 class estimate
 {
     protected $sqrFt;
