@@ -50,6 +50,7 @@ class ComposerStaticInitf1d1507496e4f332494b57fa6709c2c9
         'Web\\Pingback' => __DIR__ . '/..' . '/bcosca/fatfree-core/web/pingback.php',
         'database' => __DIR__ . '/../..' . '/model/database.php',
         'estimate' => __DIR__ . '/../..' . '/classes/estimate.php',
+        'information' => __DIR__ . '/../..' . '/classes/information.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

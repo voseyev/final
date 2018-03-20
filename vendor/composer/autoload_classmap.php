@@ -49,4 +49,5 @@ return array(
     'Web\\Pingback' => $vendorDir . '/bcosca/fatfree-core/web/pingback.php',
     'database' => $baseDir . '/model/database.php',
     'estimate' => $baseDir . '/classes/estimate.php',
+    'information' => $baseDir . '/classes/information.php',
 );

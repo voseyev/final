@@ -9,11 +9,35 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Thank you for choosing Quality Tile!</h1>
+
 <include href="pages/navbar.html" />
 
-<form action="admin">
-<input class="btn btn-primary" type="submit" name="admin" id="admin" value="ADMIN">
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center pb-3">Current Clients</h2>
+
+            <table id="clients" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <repeat group="{{@clients}}" value="{{@client}}">
+                    <tr onclick="routeTo({{ @client['cusomer_id'] }})">
+                        <td>{{@client['customer_id']}}</td>
+                        <td>{{@client['firstname']}} {{@client['lastname']}}</td>
+                        <td>{{@client['email']}}</td>
+                    </tr>
+                </repeat>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

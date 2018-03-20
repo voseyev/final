@@ -65,16 +65,16 @@
       <!-- Features Section -->
       <div class="row">
         <div class="col-lg-6">
-          <p>Are you tired of  </p>
-            <p>Are you tired of  </p>
+          <p>Are you tired of your house and the old style. Do you want to make your house feel fresh again? Well then
+          you came to the right place! Our customers love our quality tile and work that we put into your
+              homes because of our strong values. There are so many different types of tile
+              and sizes to choose from! At <b>Quality Tile</b> we make sure to bring to you only Quality!</p>
           <ul>
-            <li>
-              <strong>Bootstrap v4</strong>
-            </li>
-            <li>jQuery</li>
-            <li>Font Awesome</li>
-            <li>Working contact form with validation</li>
-            <li>Unstyled page elements for easy customization</li>
+              <li>Quality!</li>
+            <li>Work Ethic</li>
+            <li>Many Styles</li>
+            <li>All sorts of sizes</li>
+              <li>Fast and Professional</li>
           </ul>
         </div>
         <div class="col-lg-6">
@@ -113,7 +113,7 @@
               </h4>
               <p class="card-text">"I was tired of my walls looking plain and water always getting splashed onto them and ruining
                   the paint. I decided to get a backsplash installed and Quality Tile not only were proffessional but also worked
-                  quickly!"</p>
+                  in a timely manner!"</p>
             </div>
           </div>
         </div>
@@ -145,43 +145,6 @@
 
 
       </div>
-
-    <!-- Marketing Icons Section -->
-    <div class="row">
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">Card Title</h4>
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">Card Title</h4>
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-            <div class="card h-100">
-                <h4 class="card-header">Card Title</h4>
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
       <!-- /.row -->
 
     <!-- Bootstrap core JavaScript -->

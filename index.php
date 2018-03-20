@@ -14,6 +14,9 @@ $f3 = Base::instance();
 //Set debug level
 $f3 -> set('DEBUG', 1);
 
+$dbh = new database();
+$_SESSION['dbh'] = $dbh;
+
 //define a default route
 $f3 -> route('GET /', function() {
     $template = new Template();
@@ -125,6 +128,9 @@ $f3 -> route('GET|POST /finalSummary', function($f3) {
         $f3->set('firstName', $firstName);
         $f3->set('lastName', $lastName);
         $f3->set('email', $email);
+
+        $dbh = $_SESSION['dbh'];
+        $dbh->addClient($firstName, $lastName, $email);
     }
         echo $template->render('pages/finalSummary.html');
 });
@@ -136,6 +142,17 @@ $f3 -> route('GET|POST /end', function() {
     }
     else {
         echo $template->render('pages/end.html');
+    }
+});
+
+$f3 -> route('GET|POST /admin', function($f3) {
+    $template = new Template();
+
+    if (isset($_POST['admin'])) {
+        $dbh = $_SESSION['dbh'];
+        $clients = $dbh->getClients();
+        $f3->set('clients', $clients);
+    echo $template->render('pages/admin.html');
     }
 });
 
