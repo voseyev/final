@@ -51,4 +51,11 @@ class database
         $row = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $row;
     }
+
+    function deleteClient($id) {
+        $dbh = database::connect();
+        $sql = "DELETE FROM `Customers` WHERE `Customers`.`customer_id` = $id";
+        $statement = $dbh->prepare($sql);
+        $statement->execute();
+    }
 }

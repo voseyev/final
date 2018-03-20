@@ -5,16 +5,18 @@
  * Date: 2/26/2018
  */
 
-function validSqrFt($sqrFt)
+function validName($name) {
+    return ctype_alpha($name);
+}
+function validSqrFt($sqrFt) {
+    return (is_numeric($sqrFt));
+}
+function validEmail($email)
 {
-    if(!empty($sqrFt) && is_numeric($sqrFt))
-    {
-        return true;
-    }
-    else
-    {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return false;
     }
+    else return true;
 }
 
 function validLocation($location)
@@ -37,18 +39,6 @@ function validLocation($location)
 
 
 
-
-$errors = array();
-
-if(!validSqrFt($sqrFt))
-{
-    $errors['sqrFt']="Please enter a valid measurement.";
-    echo "ERROR";
-}
-
-if(!validLocation($location)) {
-    $errors['age'] = "Please choose at least one";
-}
 
 
 

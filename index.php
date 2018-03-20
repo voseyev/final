@@ -44,18 +44,25 @@ $f3 -> route('GET|POST /style', function($f3) {
         $_SESSION['location'] = $location;
         $_SESSION['sqrFt'] = $sqrFt;
 
-        include('model/validate.php');
-
         $estimate = new estimate($location, $sqrFt, ' ', ' ');
 
         $estimate->setSqrFt($sqrFt);
         $estimate->setLocation($location);
 
+        include('model/validate.php');
+        $isValid = true;
+        if (!validSqrFt($sqrFt)) {
+            $f3->set('invalidSqrFt', "invalid");
+            $isValid  = false;
+        }
     }
 
-    //$f3->set('errors',$errors);
-    echo $template->render('pages/style.html');
-
+    if($isValid) {
+        echo $template->render('pages/style.html');
+    }
+    else {
+        echo $template->render('pages/estimate.html');
+    }
 
 });
 
@@ -131,8 +138,30 @@ $f3 -> route('GET|POST /finalSummary', function($f3) {
 
         $dbh = $_SESSION['dbh'];
         $dbh->addClient($firstName, $lastName, $email);
+
+        include('model/validate.php');
+        $isValid = true;
+        if (!validName($firstName)) {
+            $f3->set('invalidFirstName', "invalid");
+            $isValid  = false;
+        }
+        if (!validName($lastName)) {
+            $f3->set('invalidLastName', "invalid");
+            $isValid = false;
+        }
+
+        if (!validEmail($email)) {
+            $f3->set('invalidEmail', "invalid");
+            $isValid = false;
+        }
     }
+
+    if($isValid) {
         echo $template->render('pages/finalSummary.html');
+    }
+    else {
+        echo $template->render('pages/contact.html');
+    }
 });
 
 $f3 -> route('GET|POST /end', function() {

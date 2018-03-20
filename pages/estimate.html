@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="./css/styles.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -29,9 +29,15 @@
     <!-- Page Heading/Breadcrumbs -->
     <form method="post" action="style">
     <div class="mt-4 mb-3">
-        <p>{{@errors['sqrFt']}}</p>
-        <label class="font-weight-bold">How many square feet of tile do you want?</label>
-        <input type="text" name="sqrFt" id="sqrFt" value="">
+        <label for="sqrFt" class="font-weight-bold">How many square feet of tile do you want?
+            <check if="{{ isset(@invalidSqrFt) }}">
+                <span class="error">Please enter a valid number</span>
+            </check>
+        </label>
+        <input id="sqrFt" name="sqrFt" type="text" placeholder="SqrFt" class="form-control input-md"
+        <check if="{{ isset(@sqrFt) }}">
+            value="{{ @sqrFt }}"
+        </check>>
     </div>
 
     <p class="breadcrumb" >Where would you like to lay the Tile?</p>
@@ -76,7 +82,6 @@
                                 <img  src="./images/shower.jpg" class = "location" alt = "shower">
                             </div>
                         </div>
-                        <p>{{@errors['location']}}</p>
                     </div>
             <div><br>
             <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Next>">

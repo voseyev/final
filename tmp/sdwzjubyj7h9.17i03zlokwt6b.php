@@ -17,7 +17,7 @@
 <div class="row">
     <div class="col-md-8">
         <label for="firstName" class="font-weight-bold">First Name
-            <?php if (isset($invalidFirst)): ?>
+            <?php if (isset($invalidFirstName)): ?>
                 <span class="error">Please enter a valid first name</span>
             <?php endif; ?>
         </label>
@@ -30,8 +30,8 @@
 
     <div class="col-md-8">
         <label for="lastName" class="font-weight-bold">Last Name
-            <?php if (isset($invalidLast)): ?>
-                <span class="error">Please enter a valid first name</span>
+            <?php if (isset($invalidLastName)): ?>
+                <span class="error">Please enter a valid last name</span>
             <?php endif; ?>
         </label>
         <input id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control input-md"
@@ -44,7 +44,7 @@
     <div class="col-md-8">
         <label for="email" class="font-weight-bold">Email
             <?php if (isset($invalidEmail)): ?>
-                <span class="error">Please enter a valid first name</span>
+                <span class="error">Please enter a valid email</span>
             <?php endif; ?>
         </label>
         <input id="email" name="email" type="text" placeholder="Email" class="form-control input-md"
