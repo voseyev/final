@@ -10,6 +10,9 @@ require("config.php");
 
 class database
 {
+    /**
+     * connects to database
+     */
     function connect()
     {
         try {
@@ -23,6 +26,9 @@ class database
             return;
         }
     }
+    /**
+     * adds client information
+     */
     function addClient($firstName, $lastName, $email)
     {
         $dbh = $this->connect();
@@ -42,6 +48,10 @@ class database
         $success = $statement->execute();
         return $success;
     }
+
+    /**
+     * gets client information
+     */
     function getClients()
     {
         $dbh = database::connect();
@@ -52,6 +62,10 @@ class database
         return $row;
     }
 
+    /**
+     * delete a client
+     * @param id, cient id that increments for every client added
+     */
     function deleteClient($id) {
         $dbh = database::connect();
         $sql = "DELETE FROM `Customers` WHERE `Customers`.`customer_id` = $id";
