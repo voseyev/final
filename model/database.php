@@ -11,7 +11,8 @@ require("config.php");
 class database
 {
     /**
-     * connects to database
+     * Connects to database using config file
+     * @return PDO|void
      */
     function connect()
     {
@@ -26,8 +27,14 @@ class database
             return;
         }
     }
+
     /**
-     * adds client information
+     * Connects to database and receives first and last name and email
+     * and inserts the information into a new row.
+     * @param $firstName
+     * @param $lastName
+     * @param $email
+     * @return bool
      */
     function addClient($firstName, $lastName, $email)
     {
@@ -50,7 +57,9 @@ class database
     }
 
     /**
-     * gets client information
+     * connects to database and recieves the row from database and then posts it
+     * into the admin page.
+     * @return array
      */
     function getClients()
     {
@@ -63,7 +72,7 @@ class database
     }
 
     /**
-     * delete a client
+     * deletes a client
      * @param id, cient id that increments for every client added
      */
     function deleteClient($id) {
