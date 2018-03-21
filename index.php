@@ -64,8 +64,18 @@ $f3 -> route('GET|POST /style', function($f3) {
 
     if($isValid) {
         echo $template->render('pages/style.html');
+        $f3->set('location', $_SESSION['location']);
+        $f3->set('sqrFt', $_SESSION['sqrFt']);
+        $f3->set('size', $_SESSION['size']);
+        $f3->set('material', $_SESSION['material']);
+        $f3->set('arraySize', $_SESSION['arraySize']);
     }
     else {
+        $f3->set('location', $_SESSION['location']);
+        $f3->set('sqrFt', $_SESSION['sqrFt']);
+        $f3->set('size', $_SESSION['size']);
+        $f3->set('material', $_SESSION['material']);
+        $f3->set('arraySize', $_SESSION['arraySize']);
         echo $template->render('pages/estimate.html');
     }
 
@@ -107,12 +117,22 @@ $f3 -> route('GET|POST /summary', function($f3) {
 });
 
 //contact page
-$f3 -> route('GET|POST /contact', function() {
+$f3 -> route('GET|POST /contact', function($f3) {
     $template = new Template();
     if(isset($_POST['Revise'])) {
+        $f3->set('location', $_SESSION['location']);
+        $f3->set('sqrFt', $_SESSION['sqrFt']);
+        $f3->set('size', $_SESSION['size']);
+        $f3->set('material', $_SESSION['material']);
+        $f3->set('arraySize', $_SESSION['arraySize']);
         echo $template->render('pages/estimate.html');
     }
     else {
+        $f3->set('location', $_SESSION['location']);
+        $f3->set('sqrFt', $_SESSION['sqrFt']);
+        $f3->set('size', $_SESSION['size']);
+        $f3->set('material', $_SESSION['material']);
+        $f3->set('arraySize', $_SESSION['arraySize']);
     echo $template->render('pages/contact.html');
     }
 });
@@ -127,6 +147,11 @@ $f3 -> route('GET|POST /finalSummary', function($f3) {
         $lastName = $_POST['lastName'];
         $email = $_POST['email'];
 
+        $_SESSION['firstName'] = $firstName;
+        $_SESSION['lastName'] = $lastName;
+        $_SESSION['email'] = $email;
+
+
         $information = new information($firstName, $lastName, $email);
 
 
@@ -140,9 +165,9 @@ $f3 -> route('GET|POST /finalSummary', function($f3) {
         $f3->set('material', $_SESSION['material']);
         $f3->set('arraySize', $_SESSION['arraySize']);
 
-        $f3->set('firstName', $firstName);
-        $f3->set('lastName', $lastName);
-        $f3->set('email', $email);
+        $f3->set('firstName', $_SESSION['firstName']);
+        $f3->set('lastName', $_SESSION['lastName']);
+        $f3->set('email', $_SESSION['email']);
 
         $dbh = $_SESSION['dbh'];
         $dbh->addClient($firstName, $lastName, $email);
@@ -164,20 +189,32 @@ $f3 -> route('GET|POST /finalSummary', function($f3) {
     }
 
     if($isValid) {
+        $f3->set('firstName', $_SESSION['firstName']);
+        $f3->set('lastName', $_SESSION['lastName']);
+        $f3->set('email', $_SESSION['email']);
         echo $template->render('pages/finalSummary.html');
     }
     else {
+        $f3->set('firstName', $_SESSION['firstName']);
+        $f3->set('lastName', $_SESSION['lastName']);
+        $f3->set('email', $_SESSION['email']);
         echo $template->render('pages/contact.html');
     }
 });
 
 //last page
-$f3 -> route('GET|POST /end', function() {
+$f3 -> route('GET|POST /end', function($f3) {
     $template = new Template();
     if(isset($_POST['Revise'])) {
+        $f3->set('firstName', $_SESSION['firstName']);
+        $f3->set('lastName', $_SESSION['lastName']);
+        $f3->set('email', $_SESSION['email']);
         echo $template->render('pages/contact.html');
     }
     else {
+        $f3->set('firstName', $_SESSION['firstName']);
+        $f3->set('lastName', $_SESSION['lastName']);
+        $f3->set('email', $_SESSION['email']);
         echo $template->render('pages/end.html');
     }
 });
